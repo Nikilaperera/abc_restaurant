@@ -1,0 +1,49 @@
+<div style="margin: 50px; padding: 20px">
+  <div style="margin-bottom: 30px">
+    <h2>Change User Group Permissions</h2>
+  </div>
+  <form [formGroup]="myForm">
+    <div style="margin-bottom: 20px">
+      <mat-form-field appearance="fill">
+        <mat-label>Select User Group:</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="groups"
+          [matAutocomplete]="auto"
+          [value]="_displayFn(myForm.get('groups')?.value)"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let group of filteredGroups | async" [value]="group">
+            {{ group.name }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <table class="mat-elevation-z8" style="width: 100%">
+      <thead>
+        <tr>
+          <th style="width: 180px; background-color: #3f51b5; color: white; height: 50px; padding: 10px">Modules</th>
+          <th
+            *ngFor="let accessType of ['View', 'Add', 'Edit', 'Delete', 'L01 Approve', 'L02 Approve', 'L03 Approve', 'Reject']"
+            style="background-color: #673ab7; color: white; width: 180px; height: 50px; padding: 10px"
+          >
+            {{ accessType }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mod of moduleList" style="height: 40px">
+          <td style="width: 180px; background-color: #2196f3; color: white; height: 40px; padding: 10px">{{ mod.name }}</td>
+          <td *ngFor="let accessType of ['view', 'add', 'edit', 'delete', 'approve1', 'approve2', 'approve3', 'reject']">
+            <mat-checkbox
+              [checked]="getCheckboxState(myForm.get('groups')?.value, mod.id, accessType)"
+              (change)="onCheckboxChange($event, myForm.get('groups')?.value, mod.id, accessType)"
+              style="height: 30px; padding: 5px"
+            ></mat-checkbox>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

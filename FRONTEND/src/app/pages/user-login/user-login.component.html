@@ -1,0 +1,113 @@
+<div>
+  <div style="padding-top: 50px; text-align: center;" >
+    <img class="mainImage" src="assets\uploads\abc.png">
+    <div class="title-1">Welcome to abc_restaurant Admin Portal</div>
+  </div>
+  <div class="container">
+    <div class="warnignText" *ngIf="showWarning" style="margin-top: 10px;">
+      <span class="warning-message fa fa-warning"></span> <!-- Font Awesome warning icon -->
+      {{ warningText }}
+    </div>
+    <div class="login-form">
+      <h1 class="topic">Admin Login</h1>
+
+
+
+
+      <form [formGroup]="loginForm" novalidate>
+        <style>
+
+          #identity {
+            height: 50px;
+          }
+          #password {
+            height: 50px;
+          }
+        </style>
+        <!-- <div>
+          <input
+          id="identity"
+            type="text"
+            formControlName="identity"
+            placeholder="Username"
+            minlength="3"
+            required
+          />
+
+
+        <input
+                id="password"
+                formControlName="password"
+                type="{{ isPasswordVisible ? 'text' : 'password' }}"
+                minlength="6"
+                placeholder="Password"
+                required
+              />
+              <div class="iconEye input-group-append">
+                <button
+                  class="btnEye btn btn-outline-secondary"
+                  type="button"
+                  id="togglePassword"
+                  (click)="togglePasswordVisibility()"
+                >
+                  <i class="{{ isPasswordVisible ?  'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
+                </button>
+                </div>
+        </div> -->
+
+        <div>
+
+
+
+          <input
+            id="identity"
+            type="text"
+            formControlName="identity"
+            placeholder="Username"
+            minlength="3"
+            required
+            style="background-color: #00000024;"
+          />
+          <input
+            id="password"
+            formControlName="password"
+            type="{{ isPasswordVisible ? 'text' : 'password' }}"
+            minlength="6"
+            placeholder="Password"
+            required
+            style="background-color: #00000024;"
+          />
+          <div class="iconEye input-group-append">
+            <button
+              class="btnEye btn btn-outline-secondary"
+              type="button"
+              id="togglePassword"
+              (click)="togglePasswordVisibility()"
+            >
+              <i class="{{ isPasswordVisible ?  'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
+            </button>
+          </div>
+          <div class="resetpw">
+            <a routerLink="/auth/app-admin-reset-password" >Reset Password?</a>
+          </div>
+        </div>
+
+        <button (click)="checkLogin()" class="login-btn" >Login</button>
+      </form>
+<div class="student-login">
+  <span style="color: #4e5b70">This is the Admin login for abc_restaurant Staff.</span><br>
+  If you are a student, please <br>
+  <a href="/auth/user-login">Click Here</a>
+</div>
+
+
+      <!--<ul>
+        <li><a routerLink="/auth/app-admin-reset-password">Reset Password?</a></li>
+      </ul>
+      <ul>
+        <li><a href="/auth/user-login">Login as Student</a></li>
+      </ul> -->
+    </div>
+  </div>
+  <div class="footer"></div>
+</div>

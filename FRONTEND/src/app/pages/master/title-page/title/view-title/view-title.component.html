@@ -1,0 +1,19 @@
+<h1 mat-dialog-title mat-dialog-title style="background-color:  #000000; color:white;">View Title</h1>
+<div>
+  <div mat-dialog-content>
+
+    <form [formGroup]="titleForm">
+
+      <div class="row mt-3">
+        <mat-form-field appearance="outline" class="mt-3">
+          <mat-label>Name:</mat-label>
+          <input formControlName="name" matInput placeholder="Enter name" readonly>
+        </mat-form-field>
+      </div>
+
+    </form>
+  </div>
+  <div [align]="'end'" class="mb-5" mat-dialog-actions>
+    <button color="warn" mat-dialog-close mat-raised-button style="margin-left:8px; margin-right: 20px;">Close</button>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div>
+  <h1 style="background-color:  #000000; color:white;" mat-dialog-title>Add User Group</h1>
+  <div mat-dialog-content>
+
+    <form [formGroup]="userGroupForm">
+
+      <table class="example-full-width" cellspacing="0">
+
+            <mat-form-field appearance="outline">
+              <mat-label>Name:</mat-label>
+              <input formControlName="name" matInput placeholder="Enter User Group Name...">
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Description: </mat-label>
+              <input formControlName="description" matInput placeholder="Enter User Group Description...">
+
+            </mat-form-field>
+
+            </table>
+    </form>
+  </div>
+
+  <div style="padding:10px ;" mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left:8px; margin-right: 20px;" mat-raised-button color="primary"
+      (click)="addUserGroup()">{{actionBtn}}</button>
+  </div>
+
+</div>

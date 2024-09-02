@@ -1,0 +1,61 @@
+API – Codeigniter 3 REST / MySQL / POSTMAN
+
+
+1. Create database name “test_db”.
+
+2. Create a table “tbl_master_univeristy” (id,code,name,address,status [Active/Inactive],created_at,updated_at).
+
+3. Create api for Add/Edit/View/Delete (JSON).
+
+
+==============================================================
+Test 02
+
+
+1.      Create a table "tbl_master_faculty" ( id ,code,name,university_code,status[Active,Inactive])
+
+2.      Create api for Add/Edit/View(faculty all information,university name, university address)/Delete (JSON).
+
+3.      Create a table "tbl_master_program" (id,code,name, status)
+
+4.      Create api for Add/Edit/View/Delete (JSON).
+
+5.      Create a table "tbl_master_program_module" (id,code,name,program_code,credits,status)
+
+6.      Create api for Add/Edit/View/Delete (JSON).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$config['base_url'] = 'http://localhost/codeigniter/index.php/';
+
+
+Step 1: API Adding Language: Copy the file named rest_controller_lang.php and paste the file in your project in the following path:  application/language/english/rest_controller_lang.php 
+
+Step 2: Copy the file named rest.php and paste it in the following path: application/config/rest.php
+
+Step 3: Copy the file named RestController.php and Format.php and paste it in the following path: application/libraries/RestController.php & application/libraries/Format.php
+
+
+
+
+

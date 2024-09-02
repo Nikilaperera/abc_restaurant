@@ -1,0 +1,11 @@
+Ac-No                    Name                     sTime               Verify Mode          Machine              Exception                                
+100152                   100152                   07/01/2017 08:30 AM Fingerpint           1                               
+100153                   100153                   07/01/2017 12:31 PM Fingerpint           1                               
+100154                   100154                   07/01/2017 08:55 AM Fingerpint           1                               
+100155                   100155                   07/01/2017 08:55 AM Fingerpint           1                               
+100156                   100156                   07/01/2017 08:59 AM Fingerpint           1                               
+100157                   100157                   07/01/2017 08:59 AM Fingerpint           1                               
+100158                   100158                   07/01/2017 08:10 AM Fingerpint           1                               
+100159                   100159                   07/01/2017 08:10 AM Fingerpint           1                               
+100160                   100160                   07/01/2017 08:10 AM Fingerpint           1                               
+991003                   991003                   07/01/2017 08:35 AM Fingerpint           1                               

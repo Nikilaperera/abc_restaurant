@@ -1,0 +1,31 @@
+<div style="margin: 50px">
+  <div style="margin-top: 20px; margin-bottom: 30px">
+    <h2>Module Groups</h2>
+  </div>
+  <form [formGroup]="moduleGroupsForm" *ngIf="hasViewAccess">
+    <table class="table table-dark table-striped" style="background-color: rgb(240, 240, 229)">
+      <thead>
+        <tr>
+          <th style="width: 180px; background-color: cornflowerblue">Modules</th>
+          <th style="background-color: rgb(21, 19, 19)" *ngFor="let group of groupsList">{{ group.name }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let mod of moduleList">
+          <tr>
+            <td style="width: 180px">{{ mod.name }}</td>
+            <ng-container>
+              <td *ngFor="let group of groupsList">
+                <mat-checkbox
+                  [checked]="getCheckboxState(group.id, mod.id)"
+                  (change)="onCheckboxChange($event, group.id, mod.id)"
+                >
+                </mat-checkbox>
+              </td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </form>
+</div>

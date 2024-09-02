@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc2e2820-babf-4331-b96b-44a09fe7f57c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2TeQrVShBvXQmhOZwT0NcYocgfG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/abc_restaurent",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "ts.external.directory.path": "C:\\xampp\\htdocs\\abc_restaurent\\FRONTEND\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\IBSL\BACKEND\app\modules\email\views\email" />
+      <recent name="D:\xampp\htdocs\IBSL\BACKEND\app\modules\email\views" />
+      <recent name="D:\xampp\htdocs\IBSL\BACKEND\app\modules\email\controllers" />
+      <recent name="D:\xampp\htdocs\IBSL\BACKEND\app\modules\email\models" />
+      <recent name="D:\xampp\htdocs\IBSL\BACKEND\app\modules\auth\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\IBSL\MYIBSL" />
+      <recent name="D:\xampp\htdocs\IBSL\BACKEND\app\modules\auth\views" />
+      <recent name="D:\xampp\htdocs\IBSL\IBSL-IPG\app\modules\exampayments\models" />
+      <recent name="D:\xampp\htdocs\IBSL\IBSL-IPG\app\modules\exampayments\controllers" />
+      <recent name="D:\xampp\htdocs\IBSL\IBSL-IPG\app\modules\stpgmgr\models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/FRONTEND/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc2e2820-babf-4331-b96b-44a09fe7f57c" name="Changes" comment="" />
+      <created>1691401266459</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691401266459</updated>
+      <workItem from="1691401267965" duration="1101000" />
+      <workItem from="1695286145549" duration="642000" />
+      <workItem from="1695292806004" duration="603000" />
+      <workItem from="1695355226424" duration="2034000" />
+      <workItem from="1695358513098" duration="7208000" />
+      <workItem from="1695445766057" duration="2690000" />
+      <workItem from="1695455592441" duration="30000" />
+      <workItem from="1695464540247" duration="5161000" />
+      <workItem from="1695610623394" duration="6517000" />
+      <workItem from="1701698912476" duration="1205000" />
+      <workItem from="1701793203295" duration="28433000" />
+      <workItem from="1702011439290" duration="469000" />
+      <workItem from="1704187271169" duration="6444000" />
+      <workItem from="1704397652064" duration="482000" />
+      <workItem from="1704458188831" duration="4921000" />
+      <workItem from="1704543199890" duration="1769000" />
+      <workItem from="1704661062717" duration="2610000" />
+      <workItem from="1704787328578" duration="4197000" />
+      <workItem from="1706250383579" duration="4246000" />
+      <workItem from="1706871358142" duration="1390000" />
+      <workItem from="1707201185893" duration="341000" />
+      <workItem from="1707202475209" duration="1172000" />
+      <workItem from="1707204159026" duration="409000" />
+      <workItem from="1707207456692" duration="1232000" />
+      <workItem from="1707208729486" duration="1053000" />
+      <workItem from="1707213440899" duration="811000" />
+      <workItem from="1707215581514" duration="778000" />
+      <workItem from="1707217731264" duration="1803000" />
+      <workItem from="1707279982631" duration="1379000" />
+      <workItem from="1707282252753" duration="3923000" />
+      <workItem from="1707300513791" duration="740000" />
+      <workItem from="1723441025427" duration="1656000" />
+      <workItem from="1723719437300" duration="608000" />
+      <workItem from="1723744968308" duration="659000" />
+      <workItem from="1723833634103" duration="715000" />
+      <workItem from="1723879790316" duration="1338000" />
+      <workItem from="1723886338392" duration="4218000" />
+      <workItem from="1723908700234" duration="10831000" />
+      <workItem from="1724092116992" duration="2285000" />
+      <workItem from="1724268969637" duration="281000" />
+      <workItem from="1724336225513" duration="641000" />
+      <workItem from="1724430279398" duration="9087000" />
+      <workItem from="1724492215659" duration="12793000" />
+      <workItem from="1724567182065" duration="2249000" />
+      <workItem from="1724868201259" duration="1214000" />
+      <workItem from="1725296448993" duration="1917000" />
+      <workItem from="1725299242909" duration="1009000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

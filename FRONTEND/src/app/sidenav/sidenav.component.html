@@ -1,0 +1,51 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <div class="logo" (click)="toggleCollapse()" [ngClass]="collapsed ? 'left-to-right' : 'right-to-left'">
+      <img src="../../assets/brand/abc.png" />
+    </div>
+    <!-- <div class="logo-text" @fadeInOut *ngIf="collapsed">abc_restaurant</div> -->
+    <div class="btnClose" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
+  </div>
+
+  <div class="scrollwrap scrollwrap_delayed">
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+        <a class="sidenav-nav-link" (click)="handleClick(data)" *ngIf="data.items && data.label !== 'Dashboard' && data.items.length > 0">
+          <div class="sidenav-link-icon" (click)="toggleCollapse()">
+            <i [class]="data.icon"></i>
+          </div>
+
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed && data.label !== 'Dashboard'">
+            {{ data.label }}
+          </span>
+
+          <i *ngIf="data.items && collapsed && data.label !== 'Dashboard'" class="menu-collapse-icon" [ngClass]="
+              !data.expanded
+                ? 'fa-sharp fa-solid fa-angle-right'
+                : 'fa-sharp fa-solid fa-angle-down'
+            ">
+          </i>
+        </a>
+        <a class="sidenav-nav-link" *ngIf="!data.items || (data.items && data.items.length === 0)"
+          [routerLink]="[data.routerLink]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <div class="sidenav-link-icon">
+            <i [class]="data.icon"></i>
+          </div>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+        </a>
+        <div *ngIf="collapsed && data.items && data.items.length > 0 && data.label !== 'Dashboard'">
+          <app-sublevel-menu [collapsed]="collapsed" [multiple]="multiple" [expanded]="data.expanded" [data]="data">
+          </app-sublevel-menu>
+        </div>
+        <a class="sidenav-nav-link" *ngIf="data.label === 'Dashboard'" [routerLink]="getDashboardLink(data)">
+          <div class="sidenav-link-icon">
+            <i [class]="data.icon"></i>
+          </div>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{ data.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

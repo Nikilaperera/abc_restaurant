@@ -1,0 +1,133 @@
+<div>
+  <h1 style="background-color: #000000; color: white" mat-dialog-title>{{ actiontitle + " System Users" }}</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="systemUserForm">
+      <table class="example-full-width" cellspacing="0">
+        <mat-divider></mat-divider>
+        <mat-label><b>CHANGE PERSONAL INFO</b></mat-label>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label> First Name: </mat-label>
+              <input formControlName="first_name" matInput placeholder="Enter First Name" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label> Last Name: </mat-label>
+              <input formControlName="last_name" matInput placeholder="Enter Last Name" />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Email: </mat-label>
+              <input type="email" formControlName="email" matInput placeholder="Enter Email" required />
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Company: </mat-label>
+              <input formControlName="company" matInput placeholder="Enter User Company" />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>User Name: </mat-label>
+              <input formControlName="username" matInput placeholder="Enter User Name" readonly />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Phone: </mat-label>
+              <input formControlName="phone" matInput placeholder="Enter User Name" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-divider></mat-divider>
+        <mat-label><b>CHANGE USER GROUPS</b></mat-label>
+
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>User Groups</mat-label>
+              <mat-select formControlName="groups">
+                <mat-option *ngFor="let grp of groupsList" [value]="grp.id">
+                  {{ grp.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Status: </mat-label>
+              <mat-select formControlName="status">
+                <mat-option value="1">Active</mat-option>
+                <mat-option value="0">Inactive</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <mat-divider></mat-divider>
+        <mat-label><b>CHANGE PASSWORD</b></mat-label>
+        <tr>
+          <td>
+            <!-- <mat-form-field appearance="outline">
+                          <mat-label>Your password</mat-label>
+                          <input formControlName="passwordnow" matInput [type]="hidecc ? 'password' : 'text'">
+                          <button mat-icon-button matSuffix (click)="hidecc = !hidecc" [attr.aria-label]="'Hide password'"
+                                  [attr.aria-pressed]="hidecc">
+                            <mat-icon>{{hidecc ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </button>
+
+
+                        </mat-form-field> -->
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Enter New password</mat-label>
+              <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+              <mat-hint>Ex: Min Length 8</mat-hint>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="password_confirm" matInput [type]="hidec ? 'password' : 'text'" />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hidec = !hidec"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hidec"
+              >
+                <mat-icon>{{ hidec ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div style="padding: 10px" mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px; margin-right: 20px" mat-raised-button color="primary" (click)="updateUsers()">update</button>
+  </div>
+</div>

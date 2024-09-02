@@ -1,0 +1,266 @@
+<div>
+  <h1 style="background-color: #000000; color: white" mat-dialog-title>Add System Users</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="systemUserForm">
+      <table class="example-full-width" cellspacing="0">
+        <mat-divider></mat-divider>
+        <mat-label> <b>Personal Informations</b></mat-label>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label> First Name: </mat-label>
+              <input formControlName="first_name" matInput />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label> Last Name: </mat-label>
+              <input formControlName="last_name" matInput />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>User Name: </mat-label>
+              <input formControlName="username" matInput />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Company: </mat-label>
+              <input formControlName="company" matInput />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Phone:</mat-label>
+              <input formControlName="phone" matInput />
+              <mat-error *ngIf="systemUserForm.get('phone')!.hasError('required')">Phone number is required</mat-error>
+              <mat-error *ngIf="systemUserForm.get('phone')!.hasError('invalidPrefix')"
+                >Phone number must start with '+94'</mat-error
+              >
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Status: </mat-label>
+              <mat-select formControlName="status">
+                <mat-option value="1">Active</mat-option>
+                <mat-option value="0">Inactive</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-divider></mat-divider>
+        <mat-label> <b>System Access Informations</b></mat-label>
+
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Email: </mat-label>
+              <input formControlName="email" matInput />
+              <mat-hint>Ex: test@gmail.com</mat-hint>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Enter your password</mat-label>
+              <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+              <mat-hint>Ex: Min Length 8</mat-hint>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="password_confirm" matInput [type]="hidec ? 'password' : 'text'" />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hidec = !hidec"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hidec"
+              >
+                <mat-icon>{{ hidec ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-divider></mat-divider>
+        <mat-label><b>CHANGE USER GROUPS</b></mat-label>
+
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>User Groups</mat-label>
+              <mat-select formControlName="groups">
+                <mat-option *ngFor="let grp of groupsList" [value]="grp.id">
+                  {{ grp.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-divider></mat-divider>
+
+        <!-- <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label> User Group: </mat-label>
+                    <mat-select formControlName="group_type">
+                        <mat-option value="MA">Management Assistant</mat-option>
+
+                    </mat-select>
+
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email: </mat-label>
+                    <input formControlName="email" matInput placeholder="Enter Email">
+
+                </mat-form-field>
+            </td>
+
+            </tr>
+            <tr>
+
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>User Name: </mat-label>
+                    <input formControlName="username" matInput placeholder="Enter User Name">
+
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password: </mat-label>
+                    <input formControlName="passwrod" matInput placeholder="Enter Password">
+
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm Password: </mat-label>
+                    <input formControlName="cpasswrod" matInput placeholder="Enter Confirm Password">
+
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>NIC: </mat-label>
+                    <input formControlName="nic" matInput placeholder="Enter NIC">
+
+
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Title: </mat-label>
+                    <mat-select formControlName="title">
+                        <mat-option value="Mr">Mr.</mat-option>
+
+                    </mat-select>
+
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name with Initials:</mat-label>
+                    <input formControlName="name_initial" matInput placeholder="Enter name with initials">
+
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Full Name:</mat-label>
+                    <input formControlName="full_name" matInput placeholder="Enter Full Name">
+
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Address:</mat-label>
+                    <input formControlName="address" matInput placeholder="Enter Address">
+
+                </mat-form-field>
+            </td>
+
+
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Designation:</mat-label>
+                    <input formControlName="designation" matInput placeholder="Enter Designation">
+
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field style="width: 100%;">
+                    <mat-label>DOB</mat-label>
+                    <input matInput [matDatepicker]="dob" formControlName="dob">
+                    <mat-datepicker-toggle matIconSuffix [for]="dob"></mat-datepicker-toggle>
+                    <mat-datepicker #dob></mat-datepicker>
+                </mat-form-field>
+
+            </td>
+
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone:</mat-label>
+                    <input formControlName="phone_no" matInput placeholder="Enter Phone">
+
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Branch: </mat-label>
+                    <mat-select formControlName="branch">
+                        <mat-option value="colombo">Colombo</mat-option>
+
+                    </mat-select>
+
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Status: </mat-label>
+                    <mat-select formControlName="status_type">
+                        <mat-option value="Active">Active</mat-option>
+                        <mat-option value="Deactive">Deactive</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </td>
+        </tr> -->
+      </table>
+    </form>
+  </div>
+  <div style="padding: 10px" mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px; margin-right: 20px" mat-raised-button color="primary" (click)="registerUsers()">
+      {{ actionBtn }}
+    </button>
+  </div>
+</div>

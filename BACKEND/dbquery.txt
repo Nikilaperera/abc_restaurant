@@ -1,0 +1,18 @@
+ALTER TABLE `hr_pay_email_templates`
+	ADD COLUMN `combination_order_five` INT(11) UNSIGNED NULL DEFAULT NULL AFTER `combination_order_four`,
+	ADD COLUMN `birthyear` INT(3) NULL DEFAULT NULL AFTER `birthdate_f_dig`,
+	ADD COLUMN `birthyeartxt` INT(11) NULL DEFAULT NULL AFTER `birthyear`,
+	ADD COLUMN `birthyear_f_dig` VARCHAR(255) NULL DEFAULT NULL AFTER `birthyeartxt`,
+	DROP COLUMN `Column 24`;
+
+
+ALTER TABLE `hr_pay_email_templates`
+	CHANGE COLUMN `birth_month_f_dig` `birth_month_f_dig` VARCHAR(255) NULL DEFAULT NULL COMMENT 'firs_dig:1,last_dig:2' COLLATE 'utf8_unicode_ci' AFTER `birth_monthtxt`;
+
+
+ALTER TABLE `hr_pay_email_templates`
+	ADD COLUMN `combination_order_six` INT(11) UNSIGNED NULL DEFAULT NULL AFTER `combination_order_five`,
+	CHANGE COLUMN `bank_account` `bank_account` INT(3) NULL DEFAULT NULL AFTER `combination_order_six`,
+	ADD COLUMN `joined_date` INT(3) NULL DEFAULT NULL AFTER `birthyear_f_dig`,
+	ADD COLUMN `joined_date_txt` INT(11) NULL DEFAULT NULL AFTER `joined_date`,
+	ADD COLUMN `joined_date_f_dig` VARCHAR(255) NULL DEFAULT NULL COMMENT 'firs_dig:1,last_dig:2' AFTER `joined_date_txt`;
