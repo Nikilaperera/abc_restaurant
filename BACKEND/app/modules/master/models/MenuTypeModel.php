@@ -17,4 +17,14 @@ class MenuTypeModel extends CI_Model
     {
         return $this->db->delete('tbl_master_menu_types', ['id' => $id]);
     }
+
+    function insert_api($data)
+    {
+        $this->db->insert('tbl_master_menu_types', $data);
+        if ($this->db->affected_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

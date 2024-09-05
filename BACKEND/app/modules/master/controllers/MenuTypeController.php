@@ -11,7 +11,7 @@ class MenuTypeController extends RestController
         parent::__construct();
         $config['upload_path'] = 'uploads/';
         $config['allowed_types'] = '*';
-        $config['encrypt_name'] = true; // 'TRUE' should be 'true'
+        $config['encrypt_name'] = true;
         $this->load->model('MenuTypeModel', 'menu_type_mod');
         $this->load->library('form_validation');
         $this->load->library('upload', $config);
@@ -20,7 +20,7 @@ class MenuTypeController extends RestController
         if ($this->api_auth->isNotAuthenticated()) {
             $err = array(
                 'status' => false,
-                'message' => 'unauthorized', // 'messgae' should be 'message'
+                'message' => 'unauthorized',
                 'data' => []
             );
             $this->response($err, 401);
@@ -48,5 +48,20 @@ class MenuTypeController extends RestController
                 'message' => 'Menu Type deletion failed. Please try again'
             ], RestController::HTTP_BAD_REQUEST);
         }
+    }
+
+    function add_post()
+    {
+        $data = [
+            'code' => $this->post('code'),
+            'name' => $this->post('name'),
+            'status' => $this->post('status')
+        ];
+
+        // Insert logic here
+        $this->menu_type_mod->insert_api($data);
+
+        // Response logic
+        $this->response($data, 200);
     }
 }
