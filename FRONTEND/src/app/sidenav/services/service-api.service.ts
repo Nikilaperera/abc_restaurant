@@ -40,24 +40,18 @@ export class ServiceApiService {
       const mortgageGroup: INavbarData = {
         routerLink: '',
         icon: '',
-        label: 'Mortgage Master',
+        label: 'Master',
         items: [],
       };
 
-
-
-
-
-
-
       item.items.forEach((subItem: any) => {
-        const includedProgramItems = [
-          'Title','bla bla bla'
+        const includedItems = [
+          'Title','Menu Types'
         ];
 
 
 
-        if (includedProgramItems.includes(subItem.name)) {
+        if (includedItems.includes(subItem.name)) {
           if (!mortgageGroup.items) {
             mortgageGroup.items = [];
           }

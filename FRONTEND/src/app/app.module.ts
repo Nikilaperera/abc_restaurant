@@ -85,6 +85,9 @@ import { CapitalizeAfterDirective } from 'src/enviroments/capitalize-after.direc
 import { CapitalizeAllDirective } from 'src/enviroments/capitalize-all.directive';
 import { AdminResetPasswordComponent } from './pages/user-login/admin-reset-password/admin-reset-password.component';
 import { ModuleGroupsComponent } from './pages/administration-management/module-groups-page/module-groups/module-groups.component';
+import { MenuTypesComponent } from './pages/master/menu-types-page/menu-types/menu-types.component';
+import { MenuTypesDialogComponent } from './pages/master/menu-types-page/menu-types-dialog/menu-types-dialog.component';
+import { EditMenuTypesComponent } from './pages/master/menu-types-page/edit-menu-types/edit-menu-types.component';
 
 
 
@@ -118,6 +121,9 @@ import { ModuleGroupsComponent } from './pages/administration-management/module-
     CapitalizeAllDirective,
     AdminResetPasswordComponent,
     ModuleGroupsComponent,
+    MenuTypesComponent,
+    MenuTypesDialogComponent,
+    EditMenuTypesComponent,
 
   ],
 

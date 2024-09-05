@@ -11,11 +11,13 @@ import { SystemLogTableComponent } from '../../pages/administration-management/s
 import { UserGroupsComponent } from 'src/app/pages/administration-management/user-groups-page/user-groups/user-groups.component';
 
 import { ModuleGroupsComponent } from 'src/app/pages/administration-management/module-groups-page/module-groups/module-groups.component';
+import {MenuTypesComponent} from "../../pages/master/menu-types-page/menu-types/menu-types.component";
 
 export const UserLayoutRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
 
   { path: 'title', component: TitleComponent },
+  { path: 'menu-types', component: MenuTypesComponent },
 
 
 
