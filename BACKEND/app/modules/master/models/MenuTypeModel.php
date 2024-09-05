@@ -27,4 +27,10 @@ class MenuTypeModel extends CI_Model
             return false;
         }
     }
+
+    function update_data($id, $data)
+    {
+        $this->db->where("id", $id);
+        return $this->db->update("tbl_master_menu_types", $data);
+    }
 }

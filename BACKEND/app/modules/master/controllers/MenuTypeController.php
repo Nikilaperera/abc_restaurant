@@ -64,4 +64,19 @@ class MenuTypeController extends RestController
         // Response logic
         $this->response($data, 200);
     }
+
+    function update_post($id)
+    {
+        $data = [
+            'code' => $this->post('code'),
+            'name' => $this->post('name'),
+            'status' => $this->post('status')
+        ];
+
+        // Update logic here
+        $this->menu_type_mod->update_data($id, $data);
+
+        // Response logic
+        $this->response($data, 200);
+    }
 }
