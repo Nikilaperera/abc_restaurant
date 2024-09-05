@@ -30,14 +30,8 @@ export class ServiceApiService {
         items: [],
       };
 
-      // const programGroup: INavbarData = {
-      //   routerLink: '',
-      //   icon: '',
-      //   label: 'Program Master',
-      //   items: [],
-      // };
 
-      const mortgageGroup: INavbarData = {
+      const abcGroup: INavbarData = {
         routerLink: '',
         icon: '',
         label: 'Master',
@@ -46,16 +40,16 @@ export class ServiceApiService {
 
       item.items.forEach((subItem: any) => {
         const includedItems = [
-          'Title','Menu Types','Reservation Types'
+          'Title','Menu Types','Reservation Types','Tables'
         ];
 
 
 
         if (includedItems.includes(subItem.name)) {
-          if (!mortgageGroup.items) {
-            mortgageGroup.items = [];
+          if (!abcGroup.items) {
+            abcGroup.items = [];
           }
-          mortgageGroup.items.push({
+          abcGroup.items.push({
             routerLink: subItem.path,
             label: subItem.name,
           });
@@ -74,8 +68,8 @@ export class ServiceApiService {
         }
       });
 
-      if (mortgageGroup.items && mortgageGroup.items.length > 0) {
-        group.items?.unshift(mortgageGroup);
+      if (abcGroup.items && abcGroup.items.length > 0) {
+        group.items?.unshift(abcGroup);
       }
 
       groupedData.push(group);

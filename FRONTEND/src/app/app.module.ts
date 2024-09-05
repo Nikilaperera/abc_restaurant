@@ -90,6 +90,8 @@ import { MenuTypesDialogComponent } from './pages/master/menu-types-page/menu-ty
 import { EditMenuTypesComponent } from './pages/master/menu-types-page/edit-menu-types/edit-menu-types.component';
 import { ReservationTypeComponent } from './pages/master/reservation-type-page/reservation-type/reservation-type.component';
 import { ReservationTypeDialogComponent } from './pages/master/reservation-type-page/reservation-type-dialog/reservation-type-dialog.component';
+import { TableComponent } from './pages/master/table-page/table/table.component';
+import { TableDialogComponent } from './pages/master/table-page/table-dialog/table-dialog.component';
 
 
 
@@ -128,6 +130,8 @@ import { ReservationTypeDialogComponent } from './pages/master/reservation-type-
     EditMenuTypesComponent,
     ReservationTypeComponent,
     ReservationTypeDialogComponent,
+    TableComponent,
+    TableDialogComponent,
 
   ],
 
