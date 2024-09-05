@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $config['base_url'] = 'http://localhost/abc_restaurant/BACKEND/';
-$config['ab_path']= 'C:/xampp/htdocs/abc/BACKEND/';
+$config['ab_path']= 'C:/xampp/htdocs/abc_restaurant/BACKEND/';
 
 
 // $config['ab_path']= '/var/www/html/abc_restaurant/BACKEND/';
