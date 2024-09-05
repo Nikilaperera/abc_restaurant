@@ -81,7 +81,28 @@ export class ReservationTypeDialogComponent {
     }
   }
 
-  private updateReservationType() {
+  updateReservationType() {
+    if (this.reservationTypeForm.valid) {
+      var formData: any = new FormData();
+      formData.set('code', this.reservationTypeForm.controls['code'].value);
+      formData.set('name', this.reservationTypeForm.controls['name'].value);
+      formData.set('status', this.reservationTypeForm.controls['status'].value);
 
+      this.api.updateReservationType(formData, this.editData.id).subscribe({
+        next: (res) => {
+          Swal.fire('Reservation Type updated successfully.');
+          this.reservationTypeForm.reset();
+          this.dialogRef.close('update');
+          for (var pair of formData.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+          }
+        },
+        error: (res) => {
+          Swal.fire('Reservation Type already exist.');
+        },
+      });
+    } else {
+      Swal.fire('Please fill required fields.');
+    }
   }
 }

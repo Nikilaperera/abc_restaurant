@@ -33,4 +33,6 @@ class MenuTypeModel extends CI_Model
         $this->db->where("id", $id);
         return $this->db->update("tbl_master_menu_types", $data);
     }
+
+
 }

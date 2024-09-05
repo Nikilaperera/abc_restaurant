@@ -31,4 +31,11 @@ export class ReservationTypeService {
       api
     );
   }
+
+  updateReservationType(api: ReservationTypeService, id: number) {
+    return this.http.post(
+      this.url + 'master/ReservationTypeController/update/' + id,
+      api
+    );
+  }
 }

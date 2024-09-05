@@ -64,4 +64,19 @@ class ReservationTypeController extends RestController
             ], RestController::HTTP_BAD_REQUEST);
         }
     }
+
+    function update_post($id)
+    {
+        $data = [
+            'code' => $this->post('code'),
+            'name' => $this->post('name'),
+            'status' => $this->post('status')
+        ];
+
+        // Update logic here
+        $this->reservation_type_mod->update_data($id, $data);
+
+        // Response logic
+        $this->response($data, 200);
+    }
 }

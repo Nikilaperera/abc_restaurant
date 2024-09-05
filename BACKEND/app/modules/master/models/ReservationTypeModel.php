@@ -27,4 +27,10 @@ class ReservationTypeModel extends CI_Model
     {
         return $this->db->delete('tbl_master_reservation_type', ['id' => $id]);
     }
+
+    function update_data($id, $data)
+    {
+        $this->db->where("id", $id);
+        return $this->db->update("tbl_master_reservation_type", $data);
+    }
 }
