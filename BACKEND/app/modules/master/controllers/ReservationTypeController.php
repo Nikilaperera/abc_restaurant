@@ -47,4 +47,21 @@ class ReservationTypeController extends RestController
         // Response logic
         $this->response($data, 200);
     }
+
+    function delete_delete($id)
+    {
+        $result = $this->reservation_type_mod->delete_single_data($id);
+
+        if ($result > 0) {
+            $this->response([
+                'status' => true,
+                'message' => 'Reservation Type deleted successfully'
+            ], RestController::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'Reservation Type deletion failed. Please try again'
+            ], RestController::HTTP_BAD_REQUEST);
+        }
+    }
 }

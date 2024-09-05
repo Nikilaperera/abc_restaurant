@@ -22,4 +22,9 @@ class ReservationTypeModel extends CI_Model
             return false;
         }
     }
+
+    function delete_single_data($id)
+    {
+        return $this->db->delete('tbl_master_reservation_type', ['id' => $id]);
+    }
 }
