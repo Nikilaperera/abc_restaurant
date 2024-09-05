@@ -32,4 +32,19 @@ class ReservationTypeController extends RestController
         $reservationTypes = $this->reservation_type_mod->fetch_all();
         $this->response($reservationTypes,200);
     }
+
+    function add_post()
+    {
+        $data = [
+            'code' => $this->post('code'),
+            'name' => $this->post('name'),
+            'status' => $this->post('status')
+        ];
+
+        // Insert logic here
+        $this->reservation_type_mod->insert_api($data);
+
+        // Response logic
+        $this->response($data, 200);
+    }
 }

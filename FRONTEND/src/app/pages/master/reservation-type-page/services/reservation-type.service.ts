@@ -23,4 +23,12 @@ export class ReservationTypeService {
       this.url + 'master/ReservationTypeController/delete/' + id
     );
   }
+
+  postReservationType(api: ReservationTypeService) {
+    console.log(api);
+    return this.http.post(
+      this.url + 'master/ReservationTypeController/add',
+      api
+    );
+  }
 }
