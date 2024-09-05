@@ -46,7 +46,7 @@ export class ServiceApiService {
 
       item.items.forEach((subItem: any) => {
         const includedItems = [
-          'Title','Menu Types'
+          'Title','Menu Types','Reservation Types'
         ];
 
 

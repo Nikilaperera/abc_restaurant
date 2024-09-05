@@ -12,12 +12,14 @@ import { UserGroupsComponent } from 'src/app/pages/administration-management/use
 
 import { ModuleGroupsComponent } from 'src/app/pages/administration-management/module-groups-page/module-groups/module-groups.component';
 import {MenuTypesComponent} from "../../pages/master/menu-types-page/menu-types/menu-types.component";
+import {ReservationTypeComponent} from "../../pages/master/reservation-type-page/reservation-type/reservation-type.component";
 
 export const UserLayoutRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
 
   { path: 'title', component: TitleComponent },
   { path: 'menu-types', component: MenuTypesComponent },
+  { path: 'reservation-types', component: ReservationTypeComponent },
 
 
 

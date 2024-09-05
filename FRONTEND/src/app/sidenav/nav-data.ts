@@ -22,6 +22,9 @@ export const navbarData: INavbarData[] = [
       },{
         routerLink: 'menu-types',
         label: 'Menu Types',
+      },{
+        routerLink: 'reservation-types',
+        label: 'Reservation Types',
       },
 
     ],

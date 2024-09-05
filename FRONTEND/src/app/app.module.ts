@@ -88,6 +88,8 @@ import { ModuleGroupsComponent } from './pages/administration-management/module-
 import { MenuTypesComponent } from './pages/master/menu-types-page/menu-types/menu-types.component';
 import { MenuTypesDialogComponent } from './pages/master/menu-types-page/menu-types-dialog/menu-types-dialog.component';
 import { EditMenuTypesComponent } from './pages/master/menu-types-page/edit-menu-types/edit-menu-types.component';
+import { ReservationTypeComponent } from './pages/master/reservation-type-page/reservation-type/reservation-type.component';
+import { ReservationTypeDialogComponent } from './pages/master/reservation-type-page/reservation-type-dialog/reservation-type-dialog.component';
 
 
 
@@ -124,6 +126,8 @@ import { EditMenuTypesComponent } from './pages/master/menu-types-page/edit-menu
     MenuTypesComponent,
     MenuTypesDialogComponent,
     EditMenuTypesComponent,
+    ReservationTypeComponent,
+    ReservationTypeDialogComponent,
 
   ],
 
