@@ -30,4 +30,79 @@ class TableController extends RestController
         $tables = $this->TableModel->fetch_all();
         $this->response($tables, 200);
     }
+
+    function add_post()
+    {
+        $code = $this->post('code');
+        $name = $this->post('name');
+        $status = $this->post('status');
+
+        $existingRecord = $this->TableModel->getByCodeOrName($code, $name);
+
+        if ($existingRecord ) {
+            $response = [
+                'message' => 'A record with the same table already exists.',
+                'data' => $existingRecord
+            ];
+            $this->response($response, 400);
+        } else {
+            $data = [
+                'code' => $code,
+                'name' => $name,
+                'status' => $status
+            ];
+
+            $this->TableModel->insert_api($data);
+            $this->response($data, 200);
+        }
+    }
+
+    function update_post($id)
+    {
+
+        $code = $this->post('code');
+        $name = $this->post('name');
+
+        $existingRecord = $this->TableModel->getByCodeOrNameByID($id, $code, $name);
+
+        if($existingRecord) {
+            $response = [
+                'message' => 'A record with the same table already exists.',
+                'data' => $existingRecord
+            ];
+            $this->response($response, 400);
+        } else {
+            $data = [
+                'code' => $code,
+                'name' => $name,
+                'status' => $this->post('status'),
+            ];
+
+            $this->TableModel->update_data($id, $data);
+            $this->response($data, 200);
+        }
+
+
+    }
+
+    function delete_delete($id)
+    {
+
+        $result = $this->TableModel->delete_single_data($id);
+
+        if($result > 0)
+        {
+            $this->response([
+                'status' => true,
+                'message' => 'Table deleted successfully'
+            ], RestController::HTTP_OK);
+        }
+        else
+        {
+            $this->response([
+                'status' => false,
+                'message' => 'Table deletion failed. Please try again'
+            ], RestController::HTTP_BAD_REQUEST);
+        }
+    }
 }

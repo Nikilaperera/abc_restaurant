@@ -68,12 +68,40 @@ export class TableComponent {
     })
   }
 
-  deleteTable(id: number) {
-
+  deleteTable(id: any) {
+    Swal.fire({
+      title: 'Are you sure you want to delete?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.api.deleteTable(id).subscribe({
+          next: (res) => {
+            this.getAllTables();
+            Swal.fire('Table delete successfull');
+          },
+          error: () => {
+            Swal.fire('Table is already used');
+          },
+        });
+      }
+    });
   }
 
   editTable(row: any) {
-
+    this.dialog
+      .open(TableDialogComponent, {
+        width: '900px',
+        height: 'auto',
+        data: row,
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'update') {
+          this.getAllTables();
+        }
+      });
   }
 
   applyFilter(event: Event) {
