@@ -14,6 +14,7 @@ import { ModuleGroupsComponent } from 'src/app/pages/administration-management/m
 import {MenuTypesComponent} from "../../pages/master/menu-types-page/menu-types/menu-types.component";
 import {ReservationTypeComponent} from "../../pages/master/reservation-type-page/reservation-type/reservation-type.component";
 import {TableComponent} from "../../pages/master/table-page/table/table.component";
+import {MenuItemsComponent} from "../../pages/master/menu-items-page/menu-items/menu-items.component";
 
 export const UserLayoutRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -22,6 +23,7 @@ export const UserLayoutRoutes: Routes = [
   { path: 'menu-types', component: MenuTypesComponent },
   { path: 'reservation-types', component: ReservationTypeComponent },
   { path: 'tables', component: TableComponent },
+  { path: 'menu-items', component: MenuItemsComponent },
 
 
 

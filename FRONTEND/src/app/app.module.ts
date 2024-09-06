@@ -92,6 +92,8 @@ import { ReservationTypeComponent } from './pages/master/reservation-type-page/r
 import { ReservationTypeDialogComponent } from './pages/master/reservation-type-page/reservation-type-dialog/reservation-type-dialog.component';
 import { TableComponent } from './pages/master/table-page/table/table.component';
 import { TableDialogComponent } from './pages/master/table-page/table-dialog/table-dialog.component';
+import { MenuItemsComponent } from './pages/master/menu-items-page/menu-items/menu-items.component';
+import { MenuItemsDialogComponent } from './pages/master/menu-items-page/menu-items-dialog/menu-items-dialog.component';
 
 
 
@@ -132,6 +134,8 @@ import { TableDialogComponent } from './pages/master/table-page/table-dialog/tab
     ReservationTypeDialogComponent,
     TableComponent,
     TableDialogComponent,
+    MenuItemsComponent,
+    MenuItemsDialogComponent,
 
   ],
 

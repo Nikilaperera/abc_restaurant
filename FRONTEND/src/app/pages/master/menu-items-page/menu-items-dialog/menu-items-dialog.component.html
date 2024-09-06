@@ -1,0 +1,63 @@
+<div>
+  <h1 style="background-color: #021432; color: white" mat-dialog-title>{{ formTitle }} Menu Items</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="menuItemForm">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Item Code:</mat-label>
+              <input formControlName="code" matInput placeholder="Enter Code" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Menu Type: </mat-label>
+              <mat-select formControlName="menu_type">
+                <mat-option *ngFor="let menuType of MenuTypeList" [value]="menuType.code">
+                  {{ menuType.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Item Name:</mat-label>
+              <input formControlName="name" matInput placeholder="Enter Item Name" />
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Remarks:</mat-label>
+              <input formControlName="remarks" matInput placeholder="Enter Remarks" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Status: </mat-label>
+              <mat-select formControlName="status">
+                <mat-option value="Active">Active</mat-option>
+                <mat-option value="Inactive">Inactive</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div style="padding: 10px" mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px; margin-right: 20px" mat-raised-button color="primary" (click)="addMenuItem()">
+      {{ actionBtn }}
+    </button>
+  </div>
+</div>

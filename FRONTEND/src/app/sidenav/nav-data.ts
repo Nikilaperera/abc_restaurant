@@ -28,6 +28,9 @@ export const navbarData: INavbarData[] = [
       },{
         routerLink: 'tables',
         label: 'Tables',
+      },{
+        routerLink: 'menu-items',
+        label: 'Menu Items',
       },
 
     ],

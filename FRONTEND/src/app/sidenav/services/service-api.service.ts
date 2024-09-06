@@ -31,25 +31,43 @@ export class ServiceApiService {
       };
 
 
-      const abcGroup: INavbarData = {
+      const masterGroup: INavbarData = {
         routerLink: '',
         icon: '',
         label: 'Master',
         items: [],
       };
 
+      const menuItemMasterGroup: INavbarData = {
+        routerLink: '',
+        icon: '',
+        label: 'Menu Master',
+        items: [],
+      };
+
+
       item.items.forEach((subItem: any) => {
         const includedItems = [
           'Title','Menu Types','Reservation Types','Tables'
         ];
 
-
+        const includedMenuMasterItems = [
+          'Menu Items'
+        ];
 
         if (includedItems.includes(subItem.name)) {
-          if (!abcGroup.items) {
-            abcGroup.items = [];
+          if (!masterGroup.items) {
+            masterGroup.items = [];
           }
-          abcGroup.items.push({
+          masterGroup.items.push({
+            routerLink: subItem.path,
+            label: subItem.name,
+          });
+        } else if (includedMenuMasterItems.includes(subItem.name)) {
+          if (!menuItemMasterGroup.items) {
+            menuItemMasterGroup.items = [];
+          }
+          menuItemMasterGroup.items.push({
             routerLink: subItem.path,
             label: subItem.name,
           });
@@ -68,8 +86,12 @@ export class ServiceApiService {
         }
       });
 
-      if (abcGroup.items && abcGroup.items.length > 0) {
-        group.items?.unshift(abcGroup);
+      if (masterGroup.items && masterGroup.items.length > 0) {
+        group.items?.unshift(masterGroup);
+      }
+
+      if (menuItemMasterGroup.items && menuItemMasterGroup.items.length > 0) {
+          group.items?.unshift(menuItemMasterGroup);
       }
 
       groupedData.push(group);
