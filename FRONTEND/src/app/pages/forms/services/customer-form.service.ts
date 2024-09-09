@@ -19,7 +19,12 @@ export class CustomerFormService {
     return this.http.get<any>(this.url + 'forms/CustomerFormController/getAllMenuTypes/');
   }
 
-  getAllMenuItems() {
-    return this.http.get<any>(this.url + 'forms/CustomerFormController/getAllMenuItems/');
+  getAllMenuItems(data: any) {
+    return this.http.post(this.url + 'forms/CustomerFormController/getAllMenuItems/', data);
+  }
+
+  postOrder(api: CustomerFormService) {
+    console.log(api);
+    return this.http.post(this.url + 'forms/CustomerFormController/add', api);
   }
 }

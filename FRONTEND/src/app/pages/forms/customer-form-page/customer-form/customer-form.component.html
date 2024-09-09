@@ -63,6 +63,78 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-3">
+        <mat-label>Order: </mat-label>
+      </div>
+      <div class="col-md-9" style="margin-left: 500px">
+        <div class="col-md-2">
+          <button
+            (click)="genOrderForm()"
+            mat-mini-fab
+            matTooltip="Add An Order"
+            color="primary"
+            aria-label="Example mini fab with a heart icon"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <mat-card-content>
+      <table class="example-full-width" [cellSpacing]="4" formArrayName="orders">
+        <tbody>
+        <tr *ngFor="let order of orders().controls; let Index = index" [formGroupName]="Index">
+          <td style="display: none;">
+            {{ Index + 1 }}
+          </td>
+
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Menu Type:</mat-label>
+              <mat-select formControlName="menu_type">
+                <mat-option *ngFor="let menu_type of menuTypeList" [value]="menu_type.code">
+                  {{ menu_type.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Menu Item:</mat-label>
+              <mat-select formControlName="menu_item">
+                <mat-option *ngFor="let menu_item of menuItemList[0]" [value]="menu_item.code">
+                  {{ menu_item.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Quantity: </mat-label>
+              <input formControlName="quantity" matInput />
+            </mat-form-field>
+          </td>
+
+          <td>
+            <button mat-mini-fab color="warn" (click)="removeRow(Index)" matTooltip="Remove Topic">X</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Extra Note: </mat-label>
+          <input formControlName="note" matInput />
+        </mat-form-field>
+      </div>
+    </div>
 
     <div class="row mt-2">
       <div class="col-md-4">
@@ -70,7 +142,9 @@
       </div>
 
       <div class="col-md-4" style="text-align: center">
-        <button type="submit" class="btn btn-primary" style="width: 50%">Submit</button>
+        <button mat-raised-button color="primary" (click)="addOrder()">
+          {{ actionBtn }}
+        </button>
       </div>
 
       <div class="col-md-4">
