@@ -48,11 +48,11 @@ export class ServiceApiService {
 
       item.items.forEach((subItem: any) => {
         const includedItems = [
-          'Title','Menu Types','Reservation Types','Tables'
+          'Title','Reservation Types','Tables'
         ];
 
         const includedMenuMasterItems = [
-          'Menu Items'
+          'Menu Items','Menu Types'
         ];
 
         if (includedItems.includes(subItem.name)) {

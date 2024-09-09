@@ -31,7 +31,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/abc_restaurant&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/IBSL-new&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
@@ -136,7 +136,8 @@
       <workItem from="1725442836974" duration="2187000" />
       <workItem from="1725550974753" duration="3309000" />
       <workItem from="1725555997221" duration="5424000" />
-      <workItem from="1725596909236" duration="3552000" />
+      <workItem from="1725596909236" duration="17464000" />
+      <workItem from="1725856190430" duration="4637000" />
     </task>
     <servers />
   </component>
@@ -164,6 +165,15 @@
           <url>file://$PROJECT_DIR$/FRONTEND/src/app/pages/master/menu-types-page/menu-types-dialog/menu-types-dialog.component.ts</url>
           <line>81</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/BACKEND/app/modules/master/controllers/TableController.php</url>
+          <line>27</line>
+          <properties>
+            <option name="className" value="\TableController" />
+            <option name="methodName" value="index_get" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

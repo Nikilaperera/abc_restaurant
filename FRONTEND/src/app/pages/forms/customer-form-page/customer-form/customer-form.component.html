@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <img src="/assets/brand/logo-application.png" alt="IBSL Logo" style="height: 90%; width: 85%; padding-top: 8px; padding-bottom: 5px;">
+    </div>
+
+    <div class="col-md-10 fw-bold" style="text-align: center; padding-top: 8px; padding-bottom: 5px; padding-right: 273px;">
+      <h1 style="margin:0px;">ABC RESTAURANT</h1>
+      <h3 style="margin:0px;">No.66/2 Baddagana Road, Pitakotte, Kotte.</h3>
+      <h3 style="margin:0px;">Tel. +94 76 434 3952 </h3>
+      <h4 style="margin:0px;">Email : info@abc.lk</h4>
+      <h4 style="margin:0px;">Website : www.abc.lk</h4>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row" style="text-align: center; background-color: #cfcfdc; padding-top: 15px;">
+      <h1>CUSTOMER ORDER FORM</h1>
+    </div>
+  </div>
+
+  <form [formGroup]="customerOrderForm">
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Customer Name: </mat-label>
+          <input formControlName="customerName" matInput placeholder="Enter your name">
+          <!--          <mat-icon matSuffix>input</mat-icon>-->
+
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Customer Email: </mat-label>
+          <input formControlName="customerEmail" matInput placeholder="Enter your email">
+          <!--          <mat-icon matSuffix>input</mat-icon>-->
+
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Customer Phone Number: </mat-label>
+          <input formControlName="customerNumber" matInput placeholder="Enter your Phone Number">
+          <!--          <mat-icon matSuffix>input</mat-icon>-->
+
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Table Name: </mat-label>
+          <mat-select formControlName="Table_code">
+            <mat-option *ngFor="let table of tablesList" [value]="table.code">
+              {{ table.name }}
+            </mat-option>
+          </mat-select>
+          <!--          <mat-icon matSuffix>input</mat-icon>-->
+
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row mt-2">
+      <div class="col-md-4">
+
+      </div>
+
+      <div class="col-md-4" style="text-align: center">
+        <button type="submit" class="btn btn-primary" style="width: 50%">Submit</button>
+      </div>
+
+      <div class="col-md-4">
+
+      </div>
+    </div>
+
+    <div class="mb-5">
+      &nbsp; &nbsp;
+    </div>
+
+  </form>
+</div>

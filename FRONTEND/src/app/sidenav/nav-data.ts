@@ -34,5 +34,16 @@ export const navbarData: INavbarData[] = [
       },
 
     ],
+  },
+  {
+    routerLink: '',
+    icon: 'fa-solid fa-database',
+    label: ' Customer',
+    items: [
+      {
+        routerLink: 'customer-form',
+        label: 'Customer Form',
+      }
+      ],
   }
 ];
