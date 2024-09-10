@@ -17,6 +17,7 @@ import {TableComponent} from "../../pages/master/table-page/table/table.componen
 import {MenuItemsComponent} from "../../pages/master/menu-items-page/menu-items/menu-items.component";
 import {CustomerFormComponent} from "../../pages/forms/customer-form-page/customer-form/customer-form.component";
 import {KitchenComponent} from "../../pages/kitchen/kitchen/kitchen.component";
+import {OrderInformationComponent} from "../../pages/forms/order-information-page/order-information/order-information.component";
 
 export const UserLayoutRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -38,6 +39,7 @@ export const UserLayoutRoutes: Routes = [
 
 
   { path: 'customer-form', component: CustomerFormComponent },
+  { path: 'order-information', component: OrderInformationComponent },
 
   { path: 'kitchen', component: KitchenComponent },
 

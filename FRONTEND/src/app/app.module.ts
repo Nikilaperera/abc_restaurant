@@ -99,6 +99,7 @@ import { KitchenComponent } from './pages/kitchen/kitchen/kitchen.component';
 import { KitchenDialogComponent } from './pages/kitchen/kitchen-dialog/kitchen-dialog.component';
 import { KitchenViewComponent } from './pages/kitchen/kitchen-view/kitchen-view.component';
 import { KitchenEditComponent } from './pages/kitchen/kitchen-edit/kitchen-edit.component';
+import { OrderInformationComponent } from './pages/forms/order-information-page/order-information/order-information.component';
 
 
 
@@ -146,6 +147,7 @@ import { KitchenEditComponent } from './pages/kitchen/kitchen-edit/kitchen-edit.
     KitchenDialogComponent,
     KitchenViewComponent,
     KitchenEditComponent,
+    OrderInformationComponent,
 
   ],
 

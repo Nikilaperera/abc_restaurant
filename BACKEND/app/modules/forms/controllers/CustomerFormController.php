@@ -86,4 +86,31 @@ class CustomerFormController extends RestController
         $this->response(true, 200);
     }
 
+    function getOrderDetails_post()
+    {
+        $order_id = $this->post('order_id');
+
+        $data = $this->Cust_form_mod->get_order_details($order_id);
+        $this->response($data, 200);
+    }
+
+    function cancel_post()
+    {
+        // Get the 'id' from the posted data
+        $detailedArray = $this->post('id');
+        $id = $detailedArray['id'];
+
+        // Prepare the data to update the status
+        $data = [
+            'order_status' => 'Canceled'
+        ];
+
+        // Update the order status using the ID
+        $this->Cust_form_mod->update_status($id, $data);
+
+        // Send a successful response back
+        $this->response(['message' => 'Order status updated successfully'], 200);
+    }
+
+
 }

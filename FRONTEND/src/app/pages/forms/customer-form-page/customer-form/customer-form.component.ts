@@ -33,7 +33,7 @@ export class CustomerFormComponent implements OnInit{
       customerEmail: ['', Validators.required],
       customerNumber: ['', Validators.required],
       Table_code: ['', Validators.required],
-      note: ['', Validators.required],
+      extra_note: ['', Validators.required],
       orders: this.formBuilder.array([]),
     });
 

@@ -27,4 +27,16 @@ export class CustomerFormService {
     console.log(api);
     return this.http.post(this.url + 'forms/CustomerFormController/add', api);
   }
+
+  getOrderDetails(data: any) {
+    return this.http.post(
+      this.url + 'forms/CustomerFormController/getOrderDetails',
+      data
+    );
+  }
+
+  cancelOrder(api: { id: number }) {
+    return this.http.post(this.url + 'forms/CustomerFormController/cancel/', api);
+  }
+
 }

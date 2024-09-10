@@ -61,4 +61,19 @@ class CustomerFormModel extends CI_Model
             return false;
         }
     }
+
+    function get_order_details($order_id)
+    {
+        $this->db->select('tbl_customer_order.*');
+        $this->db->from('tbl_customer_order');
+        $this->db->where("tbl_customer_order.order_id ",$order_id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function update_status($id, $data)
+    {
+        $this->db->where("id", $id);
+        return $this->db->update("tbl_customer_order", $data);
+    }
 }
