@@ -47,7 +47,7 @@ checkLogin() {
 
     this.api.separate(formData).subscribe({
       next: (res: any) => {
-        if (res != 'Student') {
+        if (res != '') {
           this.api.checkLogin(formData).subscribe({
             next: (res: any) => {
               console.log('res_grp', res.group);

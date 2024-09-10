@@ -123,8 +123,6 @@ class Auth extends RestController
             $remember = (bool) $this->input->post('remember');
 
             if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)) {
-                var_dump('sdsdsds');
-                die();
                 $user = $this->ion_auth->user()->row();
 
                 $userId = $this->ion_auth->get_user_id();
