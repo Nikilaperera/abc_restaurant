@@ -113,12 +113,14 @@ export class CustomerFormComponent implements OnInit{
       const customerEmail = this.customerOrderForm.controls['customerEmail'].value;
       const customerNumber = this.customerOrderForm.controls['customerNumber'].value;
       const Table_code = this.customerOrderForm.controls['Table_code'].value;
+      const extra_note = this.customerOrderForm.controls['extra_note'].value;
       const orders = this.customerOrderForm.controls['orders'].value;
 
       formData.append('customerName', customerName);
       formData.append('customerEmail', customerEmail);
       formData.append('customerNumber', customerNumber);
       formData.append('Table_code', Table_code);
+      formData.append('extra_note', extra_note);
 
       formData.append('orders', JSON.stringify(orders));
 

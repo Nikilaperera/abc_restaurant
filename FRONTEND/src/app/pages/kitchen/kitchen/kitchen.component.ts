@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {KitchenService} from "../services/kitchen.service";
 import {KitchenDialogComponent} from "../kitchen-dialog/kitchen-dialog.component";
 import Swal from "sweetalert2";
+import {KitchenEditComponent} from "../kitchen-edit/kitchen-edit.component";
 
 @Component({
   selector: 'app-kitchen',
@@ -65,7 +66,17 @@ export class KitchenComponent implements OnInit{
   }
 
   editKitchenDetails(row: any) {
+    this.dialog.open(KitchenEditComponent, {
+      disableClose: true,
+      width: '900px',
+      height: 'auto',
 
+      data: row,
+    }).afterClosed().subscribe(val => {
+      if (val === 'update') {
+        this.getAllKitchenDetails();
+      }
+    })
   }
 
   viewKitchenDetails(row: any) {
@@ -73,7 +84,24 @@ export class KitchenComponent implements OnInit{
   }
 
   deleteKitchenDetails(id: any) {
+    Swal.fire({
+      title: 'Are you sure you want to delete ?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.api.deleteKitchenDetails(id).subscribe({
+          next: (res) => {
+            this.getAllKitchenDetails();
+            Swal.fire("Order deleted successfully");
+          },
+          error:()=>{
+            Swal.fire("Order already Prepared, you can't delete !");
+          }
 
+        })}
+    });
   }
 
   applyFilter(event: Event) {

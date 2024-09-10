@@ -14,4 +14,20 @@ export class KitchenService {
   getKitchenDetails() {
     return this.http.get<any>(this.url + 'kitchen/KitchenController');
   }
+
+  deleteKitchenDetails(id: number) {
+    return this.http.delete(this.url + 'kitchen/KitchenController/delete/' + id);
+  }
+
+  getAllMenuItems(data: any) {
+    return this.http.post(this.url + 'kitchen/KitchenController/getAllMenuItems/', data);
+  }
+
+  getAllMenuTypes() {
+    return this.http.get<any>(this.url + 'kitchen/KitchenController/getAllMenuTypes/');
+  }
+
+  updateOrder(api: KitchenService, id: number) {
+    return this.http.post(this.url + 'kitchen/KitchenController/update/' + id, api);
+  }
 }

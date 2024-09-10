@@ -60,6 +60,7 @@ class CustomerFormController extends RestController
         $customerEmail = $this->input->post('customerEmail');
         $customerNumber = $this->input->post('customerNumber');
         $Table_code = $this->input->post('Table_code');
+        $extra_note = $this->input->post('extra_note');
         $orders = $this->input->post('orders'); // Fixed 'post'
 
         $data_array = json_decode($orders, true);
@@ -72,6 +73,7 @@ class CustomerFormController extends RestController
                 'customer_email' => $customerEmail,
                 'customer_number' => $customerNumber,
                 'table_code' => $Table_code,
+                'extra_note' => $extra_note,
                 'menu_type' => $order['menu_type'],
                 'menu_item' => $order['menu_item'],
                 'quantity' => $order['quantity'],
