@@ -5,7 +5,6 @@ import { UserLayoutComponent } from './layouts/user-layout/user-layout.component
 import { CommonModule } from '@angular/common';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { AuthGuard } from './auth.guard';
-import { LoginComponent } from './pages/login/login.component';
 
 
 import { UserLoginComponent } from './pages/user-login/user-login.component';
