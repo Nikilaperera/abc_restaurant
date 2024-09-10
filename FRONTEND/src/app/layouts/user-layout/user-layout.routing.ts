@@ -16,6 +16,7 @@ import {ReservationTypeComponent} from "../../pages/master/reservation-type-page
 import {TableComponent} from "../../pages/master/table-page/table/table.component";
 import {MenuItemsComponent} from "../../pages/master/menu-items-page/menu-items/menu-items.component";
 import {CustomerFormComponent} from "../../pages/forms/customer-form-page/customer-form/customer-form.component";
+import {KitchenComponent} from "../../pages/kitchen/kitchen/kitchen.component";
 
 export const UserLayoutRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -37,6 +38,8 @@ export const UserLayoutRoutes: Routes = [
 
 
   { path: 'customer-form', component: CustomerFormComponent },
+
+  { path: 'kitchen', component: KitchenComponent },
 
 
   //  { path: 'class-allocation',component: ClassAllocationComponent },

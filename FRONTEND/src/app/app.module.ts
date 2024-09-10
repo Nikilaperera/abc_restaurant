@@ -95,6 +95,10 @@ import { TableDialogComponent } from './pages/master/table-page/table-dialog/tab
 import { MenuItemsComponent } from './pages/master/menu-items-page/menu-items/menu-items.component';
 import { MenuItemsDialogComponent } from './pages/master/menu-items-page/menu-items-dialog/menu-items-dialog.component';
 import { CustomerFormComponent } from './pages/forms/customer-form-page/customer-form/customer-form.component';
+import { KitchenComponent } from './pages/kitchen/kitchen/kitchen.component';
+import { KitchenDialogComponent } from './pages/kitchen/kitchen-dialog/kitchen-dialog.component';
+import { KitchenViewComponent } from './pages/kitchen/kitchen-view/kitchen-view.component';
+import { KitchenEditComponent } from './pages/kitchen/kitchen-edit/kitchen-edit.component';
 
 
 
@@ -138,6 +142,10 @@ import { CustomerFormComponent } from './pages/forms/customer-form-page/customer
     MenuItemsComponent,
     MenuItemsDialogComponent,
     CustomerFormComponent,
+    KitchenComponent,
+    KitchenDialogComponent,
+    KitchenViewComponent,
+    KitchenEditComponent,
 
   ],
 
