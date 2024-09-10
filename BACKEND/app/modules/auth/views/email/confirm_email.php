@@ -187,7 +187,7 @@
                                                     Dear <?php echo $initials; ?>,
                                                     <br>
                                                     <br>
-                                                    Welcome to the <a href="https://myabc_restaurant.abc_restaurant.lk/auth/user-login" target="_blank">Myabc_restaurant</a> student portal.
+                                                    Welcome to the <a href="https://myabc_restaurant.abc_restaurant.lk/auth/user-login" target="_blank">Myabc_restaurant</a> Customer Login.
                                                     <br>
                                                     <br>
                                                     Find your Credentials are below:
@@ -201,7 +201,7 @@
                                                     <br>
                                                     <b>Next:</b>
                                                     <br>
-                                                    Change your password (Recommended) by clicking on "Reset password" in the student login portal after your first login.
+                                                    Change your password (Recommended) by clicking on "Reset password" in the Customer Login portal after your first login.
                                                     <br>
                                                     <br>
                                                     <b>Now You Can :</b>

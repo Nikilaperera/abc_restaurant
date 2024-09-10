@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
     });
 
-    Swal.fire({
-      html: `<img src="assets/uploads/Web_banner_for_open_exam_application_31.01.2024-01-01.jpg" alt="Image" style="width: 100%; height: auto; border:none;  padding: 0; margin: 0;">`,
-      showCloseButton: true,
-      showConfirmButton: false,
-    });
+    // Swal.fire({
+    //   html: `<img src="assets/uploads/Web_banner_for_open_exam_application_31.01.2024-01-01.jpg" alt="Image" style="width: 100%; height: auto; border:none;  padding: 0; margin: 0;">`,
+    //   showCloseButton: true,
+    //   showConfirmButton: false,
+    // });
   }
 
   checkLogin() {
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       this.api.separate(formData).subscribe({
         next: (res: any) => {
           console.log(res);
-          if (res == 'Student') {
+          if (res == 'Customer') {
             this.api.checkLogin(formData).subscribe({
               next: (res: any) => {
                 console.log('res_grp', res.group);

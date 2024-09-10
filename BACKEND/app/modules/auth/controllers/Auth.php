@@ -111,16 +111,20 @@ class Auth extends RestController
     public function login_post()
     {
 
+
         // validate form input
         $this->form_validation->set_rules('identity', str_replace(':', '', $this->lang->line('login_identity_label')), 'required');
         $this->form_validation->set_rules('password', str_replace(':', '', $this->lang->line('login_password_label')), 'required');
 
         if ($this->form_validation->run() === TRUE) {
+
             // check to see if the user is logging in
             // check for "remember me"
             $remember = (bool) $this->input->post('remember');
 
             if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)) {
+                var_dump('sdsdsds');
+                die();
                 $user = $this->ion_auth->user()->row();
 
                 $userId = $this->ion_auth->get_user_id();

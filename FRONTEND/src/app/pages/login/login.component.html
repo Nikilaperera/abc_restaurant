@@ -5,7 +5,7 @@
 <div>
   <div style="padding-top: 50px; text-align: center">
     <img class="mainImage" src="assets\uploads\abc.png"/>
-    <div class="title-1">Welcome to abc_restaurant Student Portal</div>
+    <div class="title-1">Welcome to abc_restaurant Customer Login</div>
   </div>
   <div class="container">
     <div *ngIf="showWarning" class="warnignText" style="margin-top: 10px">
@@ -14,7 +14,7 @@
       {{ warningText }}
     </div>
     <div class="login-form">
-      <h1 class="topic">Student Login</h1>
+      <h1 class="topic">Customer Login</h1>
 
       <form [formGroup]="loginForm" novalidate>
         <style>
@@ -26,35 +26,6 @@
             height: 50px;
           }
         </style>
-        <!-- input feild -->
-
-        <!-- <input
-              id="identity"
-              type="text"
-              formControlName="identity"
-              placeholder="Username"
-              minlength="3"
-              required
-            />
-              <input
-                id="password"
-                formControlName="password"
-                type="{{ isPasswordVisible ? 'text' : 'password' }}"
-                minlength="6"
-                placeholder="Password"
-                required
-              />
-              <div class="iconEye input-group-append">
-                <button
-                  class="btnEye btn btn-outline-secondary"
-                  type="button"
-                  id="togglePassword"
-                  (click)="togglePasswordVisibility()"
-                >
-                  <i class="{{ isPasswordVisible ?  'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
-                </button>
-              </div>
-            -->
 
         <input
           formControlName="identity"
@@ -88,19 +59,6 @@
         <button (click)="checkLogin()" class="login-btn" style=" margin-top: 10px ;">Login</button>
       </form>
 
-      <div class="student-Reg">
-        <a routerLink="/auth/user-register">I don't have an account</a>
-      </div>
-
-      <!-- <ul>
-        <li><a href="/auth/login">Login as Employee</a></li>
-      </ul> -->
-      <!--<ul>
-        <li><a routerLink="/auth/user-register">I don't have an account</a></li>
-      </ul>-->
-      <!--<ul>
-        <li><a routerLink="/auth/app-studdent-reset-password">Reset Password?</a></li>
-      </ul>-->
     </div>
   </div>
   <div class="footer"></div>

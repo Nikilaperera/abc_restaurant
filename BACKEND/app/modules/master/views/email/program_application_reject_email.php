@@ -213,7 +213,7 @@
                                                     <br>
                                                     <br>
                                                     Institute Of Bankers of Sri Lanka
-                                                    <!-- Thank you for registering on the abc_restaurant student portal. Your registration has been <b>rejected</b> due to <?php echo $remark; ?>. -->
+                                                    <!-- Thank you for registering on the abc_restaurant Customer Login. Your registration has been <b>rejected</b> due to <?php echo $remark; ?>. -->
                                                     <!-- <br> -->
                                                     <!-- If you have any questions, please don't hesitate to contact us. We are here to assist you. -->
                                                     <!-- <br> -->

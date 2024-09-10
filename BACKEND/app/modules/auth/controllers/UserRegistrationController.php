@@ -638,7 +638,7 @@ class UserRegistrationController extends RestController
             $message = $this->load->view("email/confirm_email", $email_content, true);
             $this->load->library('php_mailer');
 
-            if ($this->php_mailer->sendEmail($email, $cc= null, 'abc_restaurant- Your Student Portal Login Details', $message)) {
+            if ($this->php_mailer->sendEmail($email, $cc= null, 'abc_restaurant- Your Customer Login Login Details', $message)) {
                 $res = [
                     'message' => 'student registered',
                 ];

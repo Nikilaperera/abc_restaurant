@@ -15,7 +15,7 @@
     <li>Login Link &nbsp; &nbsp; &nbsp;: <a href="https://myabc_restaurant.abc_restaurant.lk/auth/user-login">https://myabc_restaurant.abc_restaurant.lk/auth/user-login</a></li>
 </ul>
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;text-align:left;font-size:12.0pt;font-family:"Times New Roman",serif;'><strong>Next:</strong></p>
-<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;text-align:left;font-size:12.0pt;font-family:"Times New Roman",serif;'>Change your password (Recommended) by clicking on &quot;Reset password&quot; in the student login portal after your first login.</p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;text-align:left;font-size:12.0pt;font-family:"Times New Roman",serif;'>Change your password (Recommended) by clicking on &quot;Reset password&quot; in the Customer Login portal after your first login.</p>
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;text-align:left;font-size:12.0pt;font-family:"Times New Roman",serif;'><strong>Now You Can log into&nbsp;</strong>Myabc_restaurant <strong>using the above Username &amp; Password&nbsp;</strong></p>
 <ul style="list-style-type: disc;">
     <li>To explore new Courses.</li>
