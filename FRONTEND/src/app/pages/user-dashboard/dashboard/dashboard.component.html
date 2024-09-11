@@ -19,7 +19,7 @@
             <!--  -->
             <div class="grid-container1">
               <div class="table">
-                <h3>Card No 1</h3>
+                <h3>Orders</h3>
                 <div class="chart-container">
                   <canvas
                     #chartCanvas
@@ -53,7 +53,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <h3 style="font-weight: bold">Card No 2</h3>
+          <h3 style="font-weight: bold">Monthly Sales</h3>
           <div>
             <!--  -->
             <div class="grid-container1" style="width: 50%; margin-left: 25%; margin-top: 10%; border: none">
@@ -93,7 +93,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <h3 style="font-weight: bold">Card No 3</h3>
+          <h3 style="font-weight: bold">Sales (Yearly)</h3>
           <div>
             <!--  -->
             <div class="grid-container1" style="width: 50%; margin-left: 25%; margin-top: 10%; border: none">
@@ -132,29 +132,6 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-
-        <mat-card-content class="dashboard-card-content">
-          <div>
-            <!--  -->
-            <div class="grid-container1">
-              <div class="table">
-                <h3>Card No 4</h3>
-                <div class="chart-container">
-                  <canvas
-                    #chartCanvas
-                    baseChart
-                    [datasets]="filteredPieChartData"
-                    [labels]="filteredbarChartLabels1"
-                    [options]="pieChartOptions"
-                    [type]="'doughnut'"
-                  ></canvas>
-                </div>
-              </div>
-            </div>
-
-            <!--  -->
-          </div>
-        </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
