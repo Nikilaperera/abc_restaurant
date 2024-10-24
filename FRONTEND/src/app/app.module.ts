@@ -100,6 +100,9 @@ import { KitchenDialogComponent } from './pages/kitchen/kitchen-dialog/kitchen-d
 import { KitchenViewComponent } from './pages/kitchen/kitchen-view/kitchen-view.component';
 import { KitchenEditComponent } from './pages/kitchen/kitchen-edit/kitchen-edit.component';
 import { OrderInformationComponent } from './pages/forms/order-information-page/order-information/order-information.component';
+import { ChefMasterComponent } from './pages/master/chef-master/chef-master/chef-master.component';
+import { ChefDialogComponent } from './pages/master/chef-master/chef-dialog/chef-dialog.component';
+import { ChefEditComponent } from './pages/master/chef-master/chef-edit/chef-edit.component';
 
 
 
@@ -148,6 +151,9 @@ import { OrderInformationComponent } from './pages/forms/order-information-page/
     KitchenViewComponent,
     KitchenEditComponent,
     OrderInformationComponent,
+    ChefMasterComponent,
+    ChefDialogComponent,
+    ChefEditComponent,
 
   ],
 

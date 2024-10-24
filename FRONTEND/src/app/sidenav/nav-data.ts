@@ -31,6 +31,9 @@ export const navbarData: INavbarData[] = [
       },{
         routerLink: 'menu-items',
         label: 'Menu Items',
+      },{
+        routerLink: 'chef-master',
+        label: 'chef Items',
       },
 
     ],
