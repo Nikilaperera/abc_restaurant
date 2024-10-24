@@ -41,7 +41,7 @@ class MenuItemController extends RestController
 
         $existingRecord = $this->MenuItemModel->getByCodeOrName($code, $name);
 
-        if ($existingRecord ) {
+        if ($existingRecord) {
             $response = [
                 'message' => 'A record with the same menu item already exists.',
                 'data' => $existingRecord
@@ -71,7 +71,7 @@ class MenuItemController extends RestController
 
         $existingRecord = $this->MenuItemModel->getByCodeOrNameByID($id, $code, $name);
 
-        if($existingRecord) {
+        if ($existingRecord) {
             $response = [
                 'message' => 'A record with the same menu item already exists.',
                 'data' => $existingRecord
@@ -103,15 +103,12 @@ class MenuItemController extends RestController
 
         $result = $this->MenuItemModel->delete_single_data($id);
 
-        if($result > 0)
-        {
+        if ($result > 0) {
             $this->response([
                 'status' => true,
                 'message' => 'Menu item deleted successfully'
             ], RestController::HTTP_OK);
-        }
-        else
-        {
+        } else {
             $this->response([
                 'status' => false,
                 'message' => 'Menu item deletion failed. Please try again'

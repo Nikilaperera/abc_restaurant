@@ -1,1 +1,77 @@
-<p>chef-master works!</p>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<div>
+    <div class="header">
+      <h2>MASTER - CHEF DETAILS</h2>
+    </div>
+  
+    <div class="example-spacer">
+      <button
+        mat-raised-button
+        style="background-color: #000000 ; color: aliceblue; margin-top: -72px !important"
+        (click)="openDialog()"
+      >
+ 
+  
+        <mat-icon>add</mat-icon> Add New
+      </button>
+    </div>
+  
+    <div class="card">
+      <div class="table">
+        <mat-form-field>
+          <mat-label>Search</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. name" #input />
+        </mat-form-field>
+  
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+              <td mat-cell *matCellDef="let row; let i = index">{{ i + 1 }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+              <td mat-cell *matCellDef="let row">{{ row.Name }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+              <td mat-cell *matCellDef="let row">{{ row.Email }}</td>
+            </ng-container>
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+              <td mat-cell *matCellDef="let row">{{ row.Status }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button (click)="editChef(row)" color="primary">
+                  <mat-icon>edit</mat-icon>
+                </button>
+  
+                <button mat-icon-button color="warn" (click)="deleteChef(row.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
+            </tr>
+          </table>
+  
+          <mat-paginator [pageSizeOptions]="[25, 100, 250, 500]" aria-label="Select page of department"> </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+  
