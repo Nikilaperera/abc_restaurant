@@ -17,14 +17,6 @@ describe('KitchenComponent', () => {
     fixture.detectChanges();
   });
 
-
-
-
-
-
-
-
-  
   it('should create', () => {
     expect(component).toBeTruthy();
   });

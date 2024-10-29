@@ -66,6 +66,17 @@
         </div>
       </div>
 
+      <mat-form-field appearance="outline">
+        <mat-label>Chef: </mat-label>
+        <mat-select formControlName="chef_id">
+          <mat-option *ngFor="let chef of ActiveChefs" [value]="chef.ID">
+            {{ chef.Name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
       <div class="row">
         <div class="col-md-8">
           <mat-form-field appearance="outline">
@@ -80,6 +91,7 @@
           </mat-form-field>
         </div>
       </div>
+
 
     </form>
   </div>

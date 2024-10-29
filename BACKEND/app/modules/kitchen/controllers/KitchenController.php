@@ -9,7 +9,7 @@ class KitchenController extends RestController
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('KitchenModel','kitchen_mod');
+        $this->load->model('KitchenModel', 'kitchen_mod');
         $this->load->library('form_validation');
         $this->load->library('upload');
         $this->load->database();
@@ -20,14 +20,15 @@ class KitchenController extends RestController
                 'messgae' => 'unauthorized',
                 'data' => []
             );
-            $this->response($err,401);
+            $this->response($err, 401);
         }
 
     }
 
     function index_get()
     {
-        $kitchenDetails =  $this->kitchen_mod->fetch_all();
+        $kitchenDetails = $this->kitchen_mod->fetch_all();
+
         $this->response($kitchenDetails, 200);
     }
 
@@ -36,24 +37,21 @@ class KitchenController extends RestController
 
         $checkOrderStatus = $this->kitchen_mod->check_order_status($id);
 
-        if ($checkOrderStatus == 'Pending' || $checkOrderStatus == 'Canceled'){
+        if ($checkOrderStatus == 'Pending' || $checkOrderStatus == 'Canceled') {
             $result = $this->kitchen_mod->delete_single_data($id);
 
-            if($result > 0)
-            {
+            if ($result > 0) {
                 $this->response([
                     'status' => true,
                     'message' => 'Order deleted successfully'
                 ], RestController::HTTP_OK);
-            }
-            else
-            {
+            } else {
                 $this->response([
                     'status' => false,
                     'message' => 'Request Type deletion failed. Please try again'
                 ], RestController::HTTP_BAD_REQUEST);
             }
-        }else{
+        } else {
             $this->response([
                 'status' => false,
                 'message' => 'This Order already Prepared. Cannot Delete!'
@@ -79,12 +77,19 @@ class KitchenController extends RestController
 
         $data = [
             'order_status' => $this->post('order_status'),
+            'chef_id' => $this->post('chef_id'),
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         $this->kitchen_mod->update_data($id, $data);
 
         $this->response($data, 200);
+    }
+
+    function getActiveChefs_get()
+    {
+        $active_chefs = $this->kitchen_mod->fetchActiveChefs();
+        $this->response($active_chefs, 200);
     }
 
 }

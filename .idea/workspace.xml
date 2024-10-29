@@ -4,7 +4,26 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc2e2820-babf-4331-b96b-44a09fe7f57c" name="Changes" comment="" />
+    <list default="true" id="dc2e2820-babf-4331-b96b-44a09fe7f57c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/app/modules/kitchen/controllers/KitchenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/app/modules/kitchen/controllers/KitchenController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/app/modules/kitchen/models/KitchenModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/app/modules/kitchen/models/KitchenModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/app/modules/master/controllers/ChefMasterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/app/modules/master/controllers/ChefMasterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/app/modules/master/models/ChefMasterModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/app/modules/master/models/ChefMasterModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen-edit/kitchen-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen-edit/kitchen-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen-edit/kitchen-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen-edit/kitchen-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen/kitchen.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen/kitchen.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen/kitchen.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen/kitchen.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen/kitchen.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/kitchen/kitchen.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/services/kitchen.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/kitchen/services/kitchen.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-dialog/chef-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-dialog/chef-dialog.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-dialog/chef-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-dialog/chef-dialog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-master/chef-master.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-master/chef-master.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-master/chef-master.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/chef-master/chef-master.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/services/chef-master.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/src/app/pages/master/chef-master/services/chef-master.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,6 +161,15 @@
       <workItem from="1725999811120" duration="623000" />
       <workItem from="1726035376832" duration="1226000" />
       <workItem from="1726164634684" duration="126000" />
+      <workItem from="1729846310317" duration="11111000" />
+      <workItem from="1730056295379" duration="37000" />
+      <workItem from="1730056379195" duration="8000" />
+      <workItem from="1730056611582" duration="345000" />
+      <workItem from="1730057058163" duration="11017000" />
+      <workItem from="1730097330580" duration="20069000" />
+      <workItem from="1730133426643" duration="4732000" />
+      <workItem from="1730143059427" duration="899000" />
+      <workItem from="1730146534627" duration="11896000" />
     </task>
     <servers />
   </component>
@@ -170,14 +198,9 @@
           <line>81</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/BACKEND/app/modules/master/controllers/TableController.php</url>
-          <line>27</line>
-          <properties>
-            <option name="className" value="\TableController" />
-            <option name="methodName" value="index_get" />
-          </properties>
-          <option name="timeStamp" value="2" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/FRONTEND/src/app/pages/master/menu-types-page/menu-types/menu-types.component.spec.ts</url>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

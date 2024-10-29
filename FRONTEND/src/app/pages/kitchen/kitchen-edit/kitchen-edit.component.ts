@@ -15,6 +15,7 @@ export class KitchenEditComponent implements OnInit{
   actionBtn: string = 'Save';
   MenuTypeList: any[] = [];
   MenuItemList: any[] = [];
+  ActiveChefs: any[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,6 +26,7 @@ export class KitchenEditComponent implements OnInit{
 
   ngOnInit(): void {
     this.get_all_menu_types();
+    this.getActiveChefs();
 
     this.KitchenForm = this.formBuilder.group({
       order_id: [''],
@@ -37,6 +39,7 @@ export class KitchenEditComponent implements OnInit{
       extra_note: [''],
       quantity: [''],
       order_status: [''],
+      chef_id : [''],
       orders: this.formBuilder.array([]),
     });
 
@@ -54,12 +57,19 @@ export class KitchenEditComponent implements OnInit{
       this.KitchenForm.controls['menu_item'].setValue(this.editData.menu_item);
       this.KitchenForm.controls['extra_note'].setValue(this.editData.extra_note);
       this.KitchenForm.controls['quantity'].setValue(this.editData.quantity);
+      this.KitchenForm.controls['chef_id'].setValue(this.editData.chef_id);
     }
   }
 
   orders(): FormArray {
     return this.KitchenForm.get('orders') as FormArray;
   }
+
+  private getActiveChefs() {
+    this.api.getActiveChefs().subscribe((data) => {
+      this.ActiveChefs = data;
+    })
+  };
 
   private get_all_menu_types() {
     this.api.getAllMenuTypes().subscribe((res) => {
@@ -73,8 +83,10 @@ export class KitchenEditComponent implements OnInit{
       var formData: any = new FormData();
 
       const order_status = this.KitchenForm.controls['order_status'].value;
+      const chef_name = this.KitchenForm.controls['chef_id'].value;
 
       formData.append('order_status', order_status);
+      formData.append('chef_id', chef_name);
 
       this.api.updateOrder(formData, this.editData.id).subscribe({
         next: (res) => {

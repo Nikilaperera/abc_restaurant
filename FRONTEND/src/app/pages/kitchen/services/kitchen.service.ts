@@ -30,4 +30,8 @@ export class KitchenService {
   updateOrder(api: KitchenService, id: number) {
     return this.http.post(this.url + 'kitchen/KitchenController/update/' + id, api);
   }
+
+  getActiveChefs() {
+    return this.http.get<any>(this.url + 'kitchen/KitchenController/getActiveChefs');
+  }
 }

@@ -14,8 +14,9 @@ import {KitchenEditComponent} from "../kitchen-edit/kitchen-edit.component";
   styleUrls: ['./kitchen.component.scss']
 })
 export class KitchenComponent implements OnInit{
-  displayedColumns: string[] = ['id','order_id', 'table_code','customer_name','customer_number','menu_type','menu_item','quantity','order_status', 'action'];
+  displayedColumns: string[] = ['id','order_id', 'table_code','customer_name','customer_number','menu_type','menu_item','quantity','chef_id','order_status', 'action'];
   dataSource!: MatTableDataSource<any>;
+  ActiveChefs: any[] = [];
 
   // hasAddAccess: boolean = false;
   // hasEditAccess: boolean = false;
@@ -36,6 +37,7 @@ export class KitchenComponent implements OnInit{
     //   this.hasDeleteAccess = permission.some((permission:any) => permission.delete_access === 'Yes');
     // });
     this.getAllKitchenDetails();
+
   }
 
   openDialog() {

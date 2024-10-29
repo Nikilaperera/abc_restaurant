@@ -28,49 +28,69 @@ export class ChefDialogComponent {
 
   ngOnInit(): void {
     this.chefForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      status: ['', Validators.required],
-    });
 
+      Name: ['', Validators.required],
+      Email: ['', [Validators.required, Validators.email]],
+      Status: ['', Validators.required],
+
+    });
+    console.log(this.editData);
     if (this.editData) {
       this.formTitle = 'Edit';
       this.actionBtn = 'Update';
-      this.chefForm.patchValue(this.editData); 
+      this.chefForm.controls['Name'].setValue(this.editData.Name);
+      this.chefForm.controls['Email'].setValue(this.editData.Email);
+      this.chefForm.controls['Status'].setValue(this.editData.Status);
     }
   }
 
-  addChef(): void {
-    if (this.chefForm.valid) {
-      if (!this.editData) {
-        this.api.postChef(this.chefForm.value).subscribe({
-          next: () => {
+  addChef() {
+    if (!this.editData) {
+      if (this.chefForm.valid) {
+        var formData: any = new FormData();
+        formData.append('Name', this.chefForm.controls['Name'].value);
+        formData.append('Email', this.chefForm.controls['Email'].value);
+        formData.append('Status', this.chefForm.controls['Status'].value);
+
+        for (var pair of formData.entries()) {
+          console.log(pair[0] + ', ' + pair[1]);
+        }
+
+        this.api.postChef(formData).subscribe({
+          next: (res) => {
             Swal.fire('Chef Details added successfully.');
             this.chefForm.reset();
             this.dialogRef.close('save');
           },
-          error: () => {
-            Swal.fire('Chef Details already exist...');
-          },
+          error: (res) => {
+            Swal.fire("Chef Details already exist...");
+          }
         });
       } else {
-        this.updateChef();
+        Swal.fire('Please fill required fields.');
       }
     } else {
-      Swal.fire('Please fill required fields.');
+      this.updateChef();
     }
   }
 
-  // Update method to handle edit cases
-  updateChef(): void {
+  updateChef() {
     if (this.chefForm.valid) {
-      this.api.updateChef(this.chefForm.value, this.editData.id).subscribe({
-        next: () => {
+      var formData: any = new FormData();
+      formData.set('Name', this.chefForm.controls['Name'].value);
+      formData.set('Email', this.chefForm.controls['Email'].value);
+      formData.set('Status', this.chefForm.controls['Status'].value);
+
+      this.api.updateChef(formData, this.editData.ID).subscribe({
+        next: (res) => {
           Swal.fire('Chef Details updated successfully.');
           this.chefForm.reset();
           this.dialogRef.close('update');
+          for (var pair of formData.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+          }
         },
-        error: () => {
+        error: (res) => {
           Swal.fire('Chef Details already exist.');
         },
       });

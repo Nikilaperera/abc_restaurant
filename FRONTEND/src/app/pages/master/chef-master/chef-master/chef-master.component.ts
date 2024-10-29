@@ -1,20 +1,20 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import Swal from 'sweetalert2';
-import { ChefMasterService } from '../services/chef-master.service';
-import { ChefDialogComponent } from '../chef-dialog/chef-dialog.component';
+import {ChefMasterService} from "../services/chef-master.service";
+import {ChefDialogComponent} from "../chef-dialog/chef-dialog.component";
 
 @Component({
   selector: 'app-chef-master',
   templateUrl: './chef-master.component.html',
   styleUrls: ['./chef-master.component.scss']
 })
-export class ChefMasterComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'status', 'action'];
+export class ChefMasterComponent {
+  displayedColumns: string[] = ['id','name', 'email','status', 'action'];
   dataSource!: MatTableDataSource<any>;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
@@ -22,11 +22,7 @@ export class ChefMasterComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(
-    public dialog: MatDialog,
-    private api: ChefMasterService,
-    private snackBar: MatSnackBar
-  ) {}
+  constructor(public dialog: MatDialog, private api: ChefMasterService,private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllChefDetails();
@@ -36,11 +32,12 @@ export class ChefMasterComponent implements OnInit {
     this.dialog.open(ChefDialogComponent, {
       width: '900px',
       height: 'auto',
+
     }).afterClosed().subscribe(val => {
       if (val === 'save') {
         this.getAllChefDetails();
       }
-    });
+    })
   }
 
   getAllChefDetails() {
@@ -52,11 +49,10 @@ export class ChefMasterComponent implements OnInit {
         console.log(res);
       },
       error: (err) => {
-        alert('Error while getting Chef Details!!!');
-      },
-    });
+        alert("Error while getting Chef Details!!!");
+      }
+    })
   }
-
   editChef(row: any) {
     this.dialog.open(ChefDialogComponent, {
       width: '900px',
@@ -66,28 +62,26 @@ export class ChefMasterComponent implements OnInit {
       if (val === 'update') {
         this.getAllChefDetails();
       }
-    });
+    })
   }
-
-  deleteChef(id: number) {
+  deleteChef(ID: number) {
+    // Ask for confirmation
     Swal.fire({
       title: 'Are you sure you want to delete ?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes',
-    }).then(result => {
+    }).then(result=>{
       if (result.isConfirmed) {
-        this.api.deleteChef(id).subscribe({
+        this.api.deleteChef(ID).subscribe({
           next: (res) => {
             this.getAllChefDetails();
-            Swal.fire('Chef Details deleted successfully');
+            Swal.fire('Chef details deleted successfully');
           },
-          error: () => {
-            Swal.fire("Chef Details already in a table, you can't delete!");
-          },
-        });
-      }
-    });
+          error:()=>{
+            Swal.fire("Chef details already in a table, you can't delete !");
+          }
+        })}})
   }
 
   applyFilter(event: Event) {
@@ -98,4 +92,5 @@ export class ChefMasterComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
 }
